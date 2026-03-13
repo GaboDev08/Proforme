@@ -1,0 +1,173 @@
+@custom-variant dark (&:is(.dark *));
+
+/* =====================================================
+   PROFORME BRAND COLOR TOKENS
+===================================================== */
+
+:root {
+  --font-size: 16px;
+  --white: #ffffff;
+  --black: #000000;
+  --brand-blue: #001f3f;
+  --brand-gold: #d4af37;
+
+  --background: #ffffff;
+  --primary: var(--brand-blue);
+  --primary-foreground: #ffffff;
+  --nav-a: var(--brand-blue);
+  --accent: var(--brand-blue);
+}
+/* Dark mode overrides */
+.dark {
+  --background: var(--brand-blue);
+  --primary: var(--brand-gold);
+  --foreground: #f9fafb;
+  --primary-foreground: var(--brand-blue);
+  --nav-a: var(--white);
+  --accent: var(--brand-gold);
+}
+
+/* =====================================================
+   TAILWIND THEME MAPPING
+===================================================== */
+
+@theme inline {
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+
+  --color-ring: var(--ring);
+
+}
+
+/* =====================================================
+   BASE STYLES
+===================================================== */
+
+@layer base {
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  label,
+  button {
+    font-size: var(--text-base);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+.nav-hover {
+  transition: color 0.3s;
+}
+
+.nav-hover:hover {
+  color: #2c7eb8;
+}
+
+.dark .nav-hover:hover {
+  color: var(--brand-gold);
+}
+
+/* =====================================================
+   CUSTOM ANIMATIONS
+===================================================== */
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.75;
+    filter: blur(8px);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(12px);
+  }
+
+}
+
+@keyframes shimmer {
+
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+  background-size: 200% auto;
+}

@@ -1,0 +1,232 @@
+---
+import "../styles/theme.css";
+
+import Icon from "../components/UI/Icon.astro";
+import logo from "../../public/logo2.png";
+---
+
+<header
+    class="fixed top-0 left-0 right-0 w-full border-b border-border z-50 transition-colors bg-(--background)"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a
+                href="/"
+                id="logoBtn"
+                data-scroll="inicio"
+                class="flex items-center gap-3 hover:opacity-60 transition-opacity"
+            >
+                <img
+                    src={logo.src}
+                    alt="PROFORME Logo"
+                    class="h-12 w-auto object-contain"
+                />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav
+                class="hidden md:flex items-center gap-8 font-semibold text-(--nav-a)"
+            >
+                <a href="/" data-scroll="inicio" class="nav-hover"> Inicio </a>
+
+                <a
+                    href="/#QuienesSomos"
+                    data-scroll="quienes-somos"
+                    class="nav-hover"
+                >
+                    Quiénes Somos
+                </a>
+
+                <a
+                    href="/#Estandares"
+                    data-scroll="estandares"
+                    class="nav-hover"
+                >
+                    Estándares
+                </a>
+
+                <a href="/#Cursos" data-scroll="cursos" class="nav-hover">
+                    Cursos
+                </a>
+
+                <a
+                    href="https://moodle.proforme.com.mx"
+                    target="_blank"
+                    class="flex items-center gap-2 font-bold text-primary dark:text-secondary nav-hover"
+                >
+                    <Icon name="graduation" class="w-5 h-5" />
+                    Moodle
+                </a>
+
+                <div class="h-6 w-px bg-border mx-2"></div>
+
+                <!-- Theme Toggle -->
+                <button
+                    id="themeToggle"
+                    class="p-2 rounded-full hover:bg-muted transition-colors hover:bg-(--)"
+                >
+                    <span id="themeIcon"></span>
+                </button>
+
+                <a
+                    href="/#Contacto"
+                    data-scroll="contacto"
+                    class="text-(--primary-foreground) px-6 py-2.5 rounded-lg hover:opacity-70 text-center bg-(--primary)"
+                >
+                    Contacto
+                </a>
+            </nav>
+
+            <!-- Mobile Buttons -->
+            <div class="flex items-center gap-2 md:hidden">
+                <button
+                    id="themeToggleMobile"
+                    class="p-2 rounded-full hover:bg-muted"
+                >
+                    <span id="themeIconMobile"></span>
+                </button>
+
+                <button
+                    id="menuToggle"
+                    class="p-2 text-xl relative w-8 h-8 flex items-center justify-center dark:text-(--foreground)"
+                >
+                    <span id="menuIcon">☰</span>
+                    <span id="closeIcon" class="hidden">✕</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav
+            id="mobileMenu"
+            class="hidden md:hidden font-medium py-4 border-t border-border bg-background dark:text-(--foreground)"
+        >
+            <div class="flex flex-col gap-4">
+                <a href="/" data-scroll="inicio" class="nav-hover"> Inicio </a>
+
+                <a
+                    href="/#QuienesSomos"
+                    data-scroll="quienes-somos"
+                    class="nav-hover"
+                >
+                    Quiénes Somos
+                </a>
+
+                <a
+                    href="/#Estandares"
+                    data-scroll="estandares"
+                    class="nav-hover"
+                >
+                    Estándares
+                </a>
+
+                <a href="/#Cursos" data-scroll="cursos" class="nav-hover">
+                    Cursos
+                </a>
+
+                <a
+                    href="https://moodle.proforme.com.mx"
+                    target="_blank"
+                    class="flex items-center justify-center gap-2 font-bold text-primary dark:text-secondary py-3 nav-hover"
+                >
+                    <Icon name="graduation" class="w-5 h-5" />
+                    Moodle
+                </a>
+
+                <a
+                    href="/#Contacto"
+                    data-scroll="contacto"
+                    class="text-(--primary-foreground) px-6 py-2.5 rounded-lg hover:opacity-70 text-center bg-(--primary)"
+                >
+                    Contacto
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script is:inline>
+    const html = document.documentElement;
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    const themeToggle = document.getElementById("themeToggle");
+    const themeToggleMobile = document.getElementById("themeToggleMobile");
+
+    const themeIcon = document.getElementById("themeIcon");
+    const themeIconMobile = document.getElementById("themeIconMobile");
+
+    const moonIcon = `
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary dark:text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008"/>
+</svg>
+`;
+
+    const sunIcon = `
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+<path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/>
+<path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"/>
+</svg>
+`;
+
+    const menuIcon = document.getElementById("menuIcon");
+    const closeIcon = document.getElementById("closeIcon");
+
+    menuToggle?.addEventListener("click", () => {
+        const isOpen = mobileMenu?.classList.toggle("hidden");
+
+        menuIcon?.classList.toggle("hidden");
+        closeIcon?.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll("[data-scroll]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-scroll");
+
+            if (id) {
+                const el = document.getElementById(id);
+
+                el?.scrollIntoView({ behavior: "smooth" });
+            }
+
+            mobileMenu?.classList.add("hidden");
+
+            menuIcon?.classList.remove("hidden");
+            closeIcon?.classList.add("hidden");
+        });
+    });
+
+    function updateIcons() {
+        const isDark = html.classList.contains("dark");
+
+        const icon = isDark ? sunIcon : moonIcon;
+
+        if (themeIcon) themeIcon.innerHTML = icon;
+        if (themeIconMobile) themeIconMobile.innerHTML = icon;
+    }
+
+    function setTheme(theme) {
+        html.classList.toggle("dark", theme === "dark");
+
+        localStorage.theme = theme;
+
+        updateIcons();
+    }
+
+    function toggleTheme() {
+        const isDark = html.classList.contains("dark");
+
+        setTheme(isDark ? "light" : "dark");
+    }
+
+    themeToggle?.addEventListener("click", toggleTheme);
+    themeToggleMobile?.addEventListener("click", toggleTheme);
+
+    const savedTheme = localStorage.theme || "light";
+
+    setTheme(savedTheme);
+</script>

@@ -1,0 +1,65 @@
+---
+import hero from "../assets/img/banner-hero.jpg";
+---
+
+<section
+    id="inicio"
+    class="relative flex items-center min-h-screen overflow-hidden"
+>
+    <!-- Imagen fondo -->
+    <img
+        src={hero.src}
+        alt="Hero PROFORME"
+        class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-(--accent)/80"></div>
+
+    <!-- Contenido -->
+    <div class="relative mx-auto max-w-7xl px-6 py-32 text-center text-white">
+        <!-- Línea decorativa -->
+        <div class="w-20 h-1 bg-(--accent) mx-auto mb-6"></div>
+
+        <h1
+            class="mx-auto max-w-4xl text-4xl md:text-7xl font-bold leading-tight tracking-tight"
+        >
+            Desarrolla tu máximo
+            <br />
+            potencial profesional
+        </h1>
+
+        <h2 class="text-xl md:text-3xl  mt-6">
+            Certifícate con validez oficial ante el CONOCER
+        </h2>
+
+        <p class="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-white/90">
+            Impulsa tu crecimiento profesional mediante estándares de
+            competencia reconocidos a nivel nacional por la SEP Federal.
+        </p>
+
+        <!-- Botones -->
+        <div class="mt-10 flex justify-center gap-6 flex-wrap">
+            <!-- Botón principal -->
+            <a
+                href="/#Estandares"
+                class="px-8 py-3 rounded-lg font-semibold
+                bg-(--accent)
+                text-(--accent-foreground)
+                hover:opacity-90 transition"
+            >
+                Ver Estándares
+            </a>
+
+            <!-- Botón secundario -->
+            <a
+                href="/#Contacto"
+                class="px-8 py-3 rounded-lg font-semibold
+                border-2 border-white
+                text-white
+                hover:bg-white hover:text-(--primary)
+                transition"
+            >
+                Contáctanos
+            </a>
+        </div>
+    </div>
+</section>
