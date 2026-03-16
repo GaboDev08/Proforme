@@ -101,7 +101,7 @@ export default function QuienesSomos() {
                             <div className="shrink-0">
                                 <div className="w-48 h-48 bg-white/10 backdrop-blur-md rounded-xl border-2 border-secondary/30 flex items-center justify-center overflow-hidden">
                                     <ImageWithFallback
-                                        src="../../public/logo2.png"
+                                        src= "../assets/img/banner-hero.jpg"
                                         alt="Certificate"
                                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                                     />

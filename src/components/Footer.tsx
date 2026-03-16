@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <img
-                src="../../public/logo2.png"
+                src="/Proforme/src/assets/astro.svg"
                 alt="PROFORME Logo"
                 className="h-10 w-auto object-contain brightness-0 invert"
               />
