@@ -9,13 +9,16 @@
   --white: #ffffff;
   --black: #000000;
   --brand-blue: #001f3f;
+  --brand-blue-second: #003366;
   --brand-gold: #d4af37;
+
 
   --background: #ffffff;
   --primary: var(--brand-blue);
   --primary-foreground: #ffffff;
   --nav-a: var(--brand-blue);
   --accent: var(--brand-blue);
+  --hero-standard: var(--brand-gold);
 }
 /* Dark mode overrides */
 .dark {
@@ -25,6 +28,7 @@
   --primary-foreground: var(--brand-blue);
   --nav-a: var(--white);
   --accent: var(--brand-gold);
+  --hero-standard: var(--brand-blue);
 }
 
 /* =====================================================

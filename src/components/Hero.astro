@@ -15,51 +15,69 @@ import hero from "../assets/img/banner-hero.jpg";
     <div class="absolute inset-0 bg-(--accent)/80"></div>
 
     <!-- Contenido -->
-    <div class="relative mx-auto max-w-7xl px-6 py-32 text-center text-white">
-        <!-- Línea decorativa -->
-        <div class="w-20 h-1 bg-(--accent) mx-auto mb-6"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="max-w-3xl">
+            <!-- Línea decorativa -->
+            <div class="w-20 h-1 bg-(--accent) mx-auto mb-6"></div>
 
-        <h1
-            class="mx-auto max-w-4xl text-4xl md:text-7xl font-bold leading-tight tracking-tight"
+            <div class="w-20 h-1 bg-(--hero-standard) mb-8"></div>
+            <h1
+                class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            >
+                Desarrolla tu máximo
+                <br />
+                potencial profesional
+            </h1>
+
+            <h2
+                class="text-2xl md:text-3xl text-secondary font-medium mb-8 text-(--hero-standard)"
+            >
+                Certifícate con validez oficial ante el CONOCER
+            </h2>
+
+            <p class="text-xl text-white/90 mb-12 leading-relaxed">
+                Impulsa tu crecimiento profesional mediante estándares de
+                competencia reconocidos a nivel nacional por la SEP Federal.
+            </p>
+
+            <!-- Botones -->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <!-- Botón principal -->
+                <a
+                    href="/#Estandares"
+                    class="px-8 py-4 rounded-lg hover:opacity-90 transition-all font-bold text-white bg-(--hero-standard)"
+                >
+                    Ver Estándares
+                </a>
+
+                <!-- Botón secundario -->
+                <a
+                    href="/#Contacto"
+                    class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg border-2 border-white hover:bg-white/20 transition-all font-semibold"
+                >
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce"
+            data-fg-eh6d23="30.144:72.3515:/src/app/components/Hero.tsx:56:7:2429:327:e:div:e"
+            data-fgid-eh6d23=":r18:"
         >
-            Desarrolla tu máximo
-            <br />
-            potencial profesional
-        </h1>
-
-        <h2 class="text-xl md:text-3xl  mt-6">
-            Certifícate con validez oficial ante el CONOCER
-        </h2>
-
-        <p class="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-white/90">
-            Impulsa tu crecimiento profesional mediante estándares de
-            competencia reconocidos a nivel nacional por la SEP Federal.
-        </p>
-
-        <!-- Botones -->
-        <div class="mt-10 flex justify-center gap-6 flex-wrap">
-            <!-- Botón principal -->
-            <a
-                href="/#Estandares"
-                class="px-8 py-3 rounded-lg font-semibold
-                bg-(--accent)
-                text-(--accent-foreground)
-                hover:opacity-90 transition"
-            >
-                Ver Estándares
-            </a>
-
-            <!-- Botón secundario -->
-            <a
-                href="/#Contacto"
-                class="px-8 py-3 rounded-lg font-semibold
-                border-2 border-white
-                text-white
-                hover:bg-white hover:text-(--primary)
-                transition"
-            >
-                Contáctanos
-            </a>
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                data-fg-eh6d24="30.144:72.3515:/src/app/components/Hero.tsx:57:9:2538:205:e:svg:e"
+                data-fgid-eh6d24=":r19:"
+                ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    data-fg-eh6d25="30.144:72.3515:/src/app/components/Hero.tsx:58:11:2628:100:e:path"
+                ></path></svg>
         </div>
     </div>
 </section>
